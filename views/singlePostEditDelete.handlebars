@@ -1,0 +1,25 @@
+<h1> Made a Mistake? </h1>
+<h3> Delete and edit your posts here</h3>
+<hr>
+
+<div class="container">
+ <div class="card-content">
+     <div class="content">
+      <textarea class="textarea"id="postTitle">{{post.post_title}}</textarea>
+    </div>
+    <div class="content">
+      <textarea class="textarea" id="newContents">{{post.post_contents}}</textarea>
+    </div>
+  </div>
+  
+    <a href="#" data-id={{post.id}} class="btn editBtn">Save <span class="icon">
+       <i class="fa-solid fa-circle-check"></i>
+      </span></a>
+     <a href="#" data-id={{post.id}} class="btn deleteBtn">Delete <span class="icon">
+       <i class="fa-solid fa-trash-can"></i>
+      </span></a>
+  
+</div>
+</div>
+
+<script src="/js/editDelete.js"></script>

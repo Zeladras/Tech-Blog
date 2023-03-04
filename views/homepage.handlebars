@@ -1,0 +1,32 @@
+
+
+<header class="headings">
+<h1> Sample Title </h1>
+<h2 id="bi-line"> </h2>
+<br>
+<section id="go-to-dash"> Go to your dashboard</header>
+        <a href="/dashboard"><button type="submit" class="margin btn">Dashboard</button></a>
+</section>
+</header>
+
+<div class="container">
+  {{#each posts}}
+  <div class="box" id="card-container">
+    <div class="content">
+      <div id="card-title">
+      <h5 class=" has-text-centered" id="card-title">{{post_title}}</h5>
+      <p id="username">{{user.username}} {{format_date createdAt}} ~ <a id="readLink" href="/post/{{id}}">
+        Leave a comment
+      </a></p>
+      </div>
+      <div class="block has-text-centered">
+        {{post_contents}}{{comment.length}}
+      </div>
+    </div>
+    <div class="read-more">
+      
+    </div>
+  </div>
+  <br>
+  {{/each}}
+</div>

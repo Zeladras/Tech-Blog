@@ -1,0 +1,52 @@
+<div class="columns is-centered mt-6">
+  <div class="column is-6">
+    <div class="container">
+      <div id="card-container">
+        <div class="content">
+          <div id="card-title">
+            <h5 class=" has-text-centered" id="card-title">{{post.post_title}}</h5>
+            <p class="comment" id="username">{{post.user.username}} {{format_date post.createdAt}} </p>
+          </div>
+          <div class="block has-text-centered">
+            {{post.post_contents}}
+          </div>
+        </div>
+        <div class="read-more">
+        </div>
+      </div>
+      <br>
+    </div>
+
+    <h1 id="single-post-heading"> What do you think:</h1>
+    {{#if post.Comments}}
+    {{#each post.Comments}}
+    <div>
+      <div class="comment-content">
+        <p><strong>{{comment_contents}}</strong></p>
+        <p class="comment"> {{user.username}} ~ {{format_date createdAt}}</p>
+      </div>
+    </div>
+    {{/each}}
+    {{/if}}
+
+    {{#if logged_in}}
+    <form class="commentInput">
+      <div class="bg-light p-2">
+        <div class="d-flex flex-row align-items-start">
+          <textarea class="form-control ml-1 shadow-none textarea" id="comment-box"></textarea>
+        </div>
+        <div class="mt-2 text-right">
+          <button id="commentID" data-id="{{post.id}}" type="submit" class="btn">
+            Post comment
+          </button>
+        </div>
+      </div>
+    </form>
+    {{/if}}
+  </div>
+  </article>
+</div>
+</div>
+</div>
+
+<script src="/js/comments.js"></script>
